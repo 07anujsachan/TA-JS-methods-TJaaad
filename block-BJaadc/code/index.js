@@ -38,7 +38,6 @@ console.log(message.toUpperCase());
 
 let newMessage = message.replace("are", "can't");
 console.log(newMessage);
-
 // Replace the word "still" to "" (empty) using newMessage variable, and re-assign the output to the variable `newMessage` and log it.
 newMessage = newMessage.replace("still", "");
 console.log(newMessage);
