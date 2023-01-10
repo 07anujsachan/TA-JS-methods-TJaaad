@@ -75,6 +75,7 @@ function test(num) {
   return num;
 }
 let filteredNumbers = numbers.filter(test);
+console.log(filteredNumbers)
 ```
 
 ```js
