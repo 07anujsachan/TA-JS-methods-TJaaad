@@ -36,7 +36,8 @@ console.log(`the character at index 5 is ${quote.charAt(5)}`);
 5. Using the variable from , to and quote variable dispaly this message
   "Syrio Forel said There is only one thing we say to death: Not today to Arya Stark." (use concat method)
 */
-console.log(from.concat(' ', 'said', ' ' ,quote,' ', 'to', ' ',to)); 
+ let final = from.concat( ' said ',quote, ' to ',to); 
+ console.log(final);
 /*
 6. Does from, to and quote ends with "rk". Check all three.
 */
@@ -68,15 +69,16 @@ console.log(text);
 /*
 12. Find the index of second "o" in quote. Use indexOf
 */
- console.log( quote.indexOf( 'o'));
+ console.log( quote.indexOf( 'o', 10));
 /*
 13. Find the last index of letter "a" in quote.
 */
-console.log(quote.lastIndexOf('a'));
+ let lastIndexOfA = quote.lastIndexOf('a');
+ console.log(lastIndexOfA);
 /*
 14. Find the second last index of letter "a" in quote.
 */
-console.log(quote.indexOf('a'));
+console.log(quote.lastIndexOf('a' ,lastIndexOfA -1  ));
 /*
 15. Make the quote 70 character long. If it has less characters add rest as .......
 Example: "Hello" (convert to 10 characters) => "Hello....."
@@ -106,7 +108,9 @@ console.log(newQuoteTo);
 /*
 20. Make the quote of length 30 and put ... at the end. (use slice)
 */
-
+let limit = quote.slice(0, 30)+ "..."
 /*
 21. Find out does quote, from, to starts with "A"
-*/
+*/console.log(from.startsWith("A"));
+console.log(quote.startsWith("A"));
+console.log(to.startsWith("A"));
