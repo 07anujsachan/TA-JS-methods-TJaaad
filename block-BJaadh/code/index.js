@@ -61,13 +61,13 @@ function isOdd(num) {
 }
 console.log(numbers.filter(isOdd));
 // - Place a new word at the start of the array use (unshift)
-
+strings.unshift(" new word!");
 // - Make a subset of numbers array [18,9,7,11]
 
 // - Make a subset of strings array ['a','collection']
 
 // - Replace 12 & 18 with 1221 and 1881
-
+numbers.replace("12");
 // - Replace words in strings array with the length of the word
 
 // - Find the sum of the length of words using above question
@@ -80,11 +80,15 @@ var customers = [
   { firstname: "Jack", lastname: "White" },
 ];
 // - Find all customers whose firstname starts with 'J'
-console.log(customers[0].firstname.startsWith("J"));
+let filter = customers.filter((customers) =>
+  customers.firstname.startsWith("J")
+);
 // - Create new array with only first name
-let customersFirstName = ["Joe", " John", "Dave", "Jack"];
+let customersFirstName = customers.filter((customers) =>
+customers.firstname )
 // - Create new array with all the full names (ex: "Joe Blogs")
-
+let customersFullName = customers.map((customer) =>
+${customer.firstName } ${customer.lastName  })
 // - Sort the array created above alphabetically
 
 // - Create a new array that contains only user who has at least one vowel in the firstname.
