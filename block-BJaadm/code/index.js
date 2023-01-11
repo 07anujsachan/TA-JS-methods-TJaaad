@@ -14,11 +14,26 @@ let persons = [
 ];
 
 // Create an array peopleName and store value of sex key from persons array
-
+let peopleName = [ ]
+for(let i=0; i<persons.length; i++){
+  let value = persons[i].name;
+  peopleName.push(value)
+}
+console.log(peopleName);
 // Create an array peopleGrade and store the value of grade key from persons array
-
+ let peopleGrade = []
+ for( let i =0 ; i < persons.length ; i++){
+  let gradeValue = persons[i].grade;
+  peopleGrade.push(gradeValue)
+ }
+ console.log(peopleGrade);
 // Create an array peopleSex and store the value of sex key from persons array
-
+let peopleSex = []
+for( let i =0 ; i < persons.length ; i++){
+ let gradeValue = persons[i].sex;
+ peopleSex.push(gradeValue)
+}
+console.log(peopleSex);
 // Log the filtered named of people in peopleName that starts with 'J' or 'P'
 
 // Log the length of filtered named of people in peopleName that starts with 'A' and 'C'
