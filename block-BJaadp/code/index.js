@@ -16,17 +16,25 @@ let persons = [
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
-
+let peopleGrade = []
+ for( let i =0 ; i < persons.length ; i++){
+  let gradeValue = persons[i].grade;
+  peopleGrade.push(gradeValue)
+ }
+let gradeTotal = peopleGrade.reduce((acc , cv) =>  acc + cv  ,0)
+console.log( gradeTotal / peopleGrade.length);
 // Find the average grade of male
-
+let maleGrade = persons.filter((person) => person.sex === "M");
+maleGrade.reduce((acc , cv) =>  acc + cv  ,0) / maleGrade.length
 // Find the average grade of female
-
+let femaleGrade = persons.filter((person) => person.sex === "F");
+femaleGrade.reduce((acc , cv) =>  acc + cv  ,0) / femaleGrade.length
 // Find the highest grade
-
+// [...peopleGrade].sort(( acc , cv ) => acc - cv ).pop()
 // Find the highest grade in male
-
+// [...maleleGrade].sort(( acc , cv ) => acc - cv ).pop()
 // Find the highest grade in female
-
+// [...femaleGrade].sort(( acc , cv ) => acc - cv ).pop()
 // Find the highest grade for people whose name starts with 'J' or 'P'
 
 const fruitBasket = [
@@ -50,8 +58,14 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
-*/
+*/ 
+const fruitsObj = fruitBasket.reduce((acc , cv)=>{
 
+  
+acc[cv] = (acc[cv] || 0) + 1
+return acc
+}, [])
+console.log(fruitsObj);
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -61,6 +75,15 @@ Output:
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
+const fruitsArr = fruitBasket.reduce((acc , cv)=>{
+console.log(acc , cv);
+[acc[cv]] = [(acc[cv] || 0)+1]
+return acc
+},[])
+
+
+
+console.log(fruitsArr)
 
 const data = [
   [1, 2, 3],
@@ -70,6 +93,12 @@ const data = [
 ];
 
 // Using reduce flat data array
+ 
+let flat = data.reduce((acc , cv) => {
+return acc.concat(cv)
+} , [])
+ console.log(flat);
+
 
 const dataTwo = [
   [1, 2, 3],
@@ -79,7 +108,10 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
-
+let flatDataTwo = data.reduce((acc , cv) => {
+  return acc.concat(cv)
+  } , [])
+   console.log(flatDataTwo);
 /*
 
 Create these functions which accepts a number value and returns a number value:
