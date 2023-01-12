@@ -75,9 +75,9 @@ Output:
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
-const fruitsArr = fruitBasket.reduce((acc , cv)=>{
-console.log(acc , cv);
-[acc[cv]] = [(acc[cv] || 0)+1]
+const fruitsArr = Object.keys(fruitsObj).reduce((acc , cv)=>{
+ acc = acc.concat([[cv , fruitsObj[cv]]])
+
 return acc
 },[])
 
@@ -133,6 +133,24 @@ let pipeline = [
   increment,
 ];
 
+function increment(num){
+  return num + 1
+}
+function double(num){
+  return num * 2 
+}
+function decrement(num){
+  return num - 1
+}
+
+function triple(num){
+  return num * 3
+}
+function half(num){
+  return Math.round( num / 2)
+}
+
+
 /*
 Using the pipeline variable that contains the collection of functions, taking the initial value 3 find the output.
 
@@ -145,7 +163,12 @@ EXAMPLE:
   decrement(8) - return 7
 
   ...
+  
 */
+ pipeline.reduce((acc,cv) =>{
+  acc = cv(acc)
+  console.log(acc);
+ }, 3)
 
 let pipeline2 = [
   increment,
@@ -160,5 +183,8 @@ let pipeline2 = [
   increment,
   triple,
 ];
-
+pipeline2.reduce((acc,cv) =>{
+  acc = cv(acc)
+  console.log(acc);
+ }, 8)
 // Find the output using pipeline2 the initial value if 8
