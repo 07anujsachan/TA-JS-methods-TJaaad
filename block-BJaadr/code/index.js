@@ -1,35 +1,66 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
 function countAllPeople() {
-  // your code goes here
+  return got.houses.reduce((acc, cv) => {
+    acc = acc + cv.people.length
+    return acc
+  },0)
 }
 
 function peopleByHouses() {
-  // your code goes here
+  return got.houses.reduce((acc , cv ) => {
+    acc[cv.name] = cv.people.length 
+    return acc
+  },{})
 }
 
 function everyone() {
-  // your code goes here
+  return got.houses.reduce((acc , cv) =>{
+   
+   acc = acc.concat(cv.people.map((p) =>
+    p.name
+   ))
+      return acc
+   } ,[])
 }
 
 function nameWithS() {
-  // your code goes here
+  return got.houses.reduce((acc , cv) =>{
+   
+    acc = acc.concat(cv.people.map(p => p.name).filter((name)=> name.includes('s', 'S')) )
+       return acc
+    } ,[])
 }
 
 function nameWithA() {
-  // your code goes here
+  return got.houses.reduce((acc , cv) =>{
+   
+    acc = acc.concat(cv.people.map(p => p.name).filter((name)=> name.includes('a', 'A')) )
+       return acc
+    } ,[])
 }
 
 function surnameWithS() {
-  // your code goes here
+return got.houses.reduce( (acc , cv ) =>{
+ acc = acc.concat(cv.people.map( p => p.name).filter((name) => name.split( ' ' )[1].startsWith('S')))
+  return acc 
+  
+},[])
 }
 
 function surnameWithA() {
-  // your code goes here
+  return got.houses.reduce( (acc , cv ) =>{
+    acc = acc.concat(cv.people.map( p => p.name).filter((name) => name.split( ' ' )[1].startsWith('A')))
+     return acc 
+     
+   },[])
 }
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+ return got.houses.reduce((acc, cv) =>{
+  acc[cv.name] = cv.people.map((p => p.name))
+  return acc
+ },{})
 }
 
 // Testing your result after writing your function
